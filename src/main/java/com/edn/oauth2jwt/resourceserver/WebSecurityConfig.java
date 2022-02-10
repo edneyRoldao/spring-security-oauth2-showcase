@@ -1,4 +1,4 @@
-package com.ednti.oauth2JWT.config;
+package com.edn.oauth2jwt.resourceserver;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("edney")
                 .password(passwordEncoder().encode("abc123"))
                 .roles("ADMIN")
-            .and()
+                .and()
                 .withUser("nadine")
                 .password(passwordEncoder().encode("def123"))
                 .roles("USER");
@@ -29,15 +29,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic()
-            .and()
+                .and()
                 .authorizeRequests()
                 .antMatchers("/api/bank-account/names").permitAll()
                 .anyRequest()
                 .authenticated()
-            .and()
+                .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
+                .and()
                 .csrf().disable();
     }
 

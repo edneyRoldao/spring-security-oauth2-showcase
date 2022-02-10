@@ -1,11 +1,10 @@
-package com.ednti.oauth2JWT.controller;
+package com.edn.oauth2jwt.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.ednti.oauth2JWT.response.BankAccountResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,11 +14,11 @@ import java.util.stream.Collectors;
 public class BankAccountController {
 
     @GetMapping("{id}")
-    public ResponseEntity<BankAccountResponse> getBankAccount(@PathVariable int id) {
-        BankAccountResponse response = BankAccountResponse
-                .getBankAccountsMock()
+    public ResponseEntity<BankAccount> getBankAccount(@PathVariable int id) {
+        BankAccount response = BankAccount
+                .getAccountsMock()
                 .stream()
-                .filter(ba -> ba.getAccountId() == id)
+                .filter(ba -> ba.getId() == id)
                 .findFirst()
                 .get();
 
@@ -28,9 +27,9 @@ public class BankAccountController {
 
     @GetMapping("names")
     public ResponseEntity<List<String>> listAccountNames() {
-        List<String> names = BankAccountResponse.getBankAccountsMock()
+        List<String> names = BankAccount.getAccountsMock()
                 .stream()
-                .map(BankAccountResponse::getAccountName)
+                .map(BankAccount::getName)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(names);

@@ -8,20 +8,15 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ednti</groupId>
-	<artifactId>oauth2JWT</artifactId>
+	<groupId>com.edn</groupId>
+	<artifactId>oauth2-jwt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>oauth2JWT</name>
-	<description>Spring Oauth2 JWT showcase</description>
+	<name>oauth2-jwt</name>
+	<description>Spring OAuth2 JWT Showcase</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -35,6 +30,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

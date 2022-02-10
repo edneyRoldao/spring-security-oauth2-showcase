@@ -1,13 +1,13 @@
-package com.ednti.oauth2JWT;
+package com.edn.oauth2jwt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Oauth2JwtApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Oauth2JwtApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

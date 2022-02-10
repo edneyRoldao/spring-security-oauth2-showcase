@@ -1,5 +1,2 @@
-spring:
-  security:
-    user:
-      name: edney
-      password: 123
+server:
+  port: 8088
